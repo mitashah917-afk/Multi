@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body>
+    <a-scene mindar-image= "imageTargetSrc: targets5.mind; maxTrack: 3" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" filterMinCF:0.2; filterBeta: 10;/>
+      <a-assets>
+    <img id="card" src="MYQR.jpeg"/>
+    <img id="card2" src="WhatsApp1.jpeg"/>
+    <img id="card3" src="sqr.jpeg"/>
+      <a-asset-item id="avatarModel" src="Penguin.glb"></a-asset-item>
+    <a-video 
+  id="rhino" 
+  src="Video.mp4"
+  autoplay 
+  loop 
+  muted 
+  playsinline
+  webkit-playsinline
+></a-video>
+<a-asset-item id="avatarModel1" src="ELEPHANT.glb"></a-asset-item>
+  </a-assets>
+
+  <a-camera id="camera" position="0 0 0" look-controls="enabled: false"></a-camera>
+
+  
+  <a-entity mindar-image-target="targetIndex: 0">
+    <a-plane src="#card3" position="0 0 0" height="1" width="1"></a-plane>
+    <a-gltf-model
+  id="penguin"
+  src="#avatarModel"
+  position="0 0 0.1"
+  scale="0.8 0.8 0.8"
+  rotation="-270 0 0">
+</a-gltf-model>
+  </a-entity>
+
+ 
+  <a-entity mindar-image-target="targetIndex: 1">
+    <a-plane src="#card" position="0 0 0" height="1" width="1"></a-plane>
+    <a-video 
+      src="#rhino" 
+      position="0 0 0.1" 
+      width="1"
+      height="0.6"
+      rotation="0 0 0">
+    </a-video>
+  </a-entity>
+
+  <a-entity mindar-image-target="targetIndex: 2">
+    <a-plane src="#card2" position="0 0 0" height="1" width="1"></a-plane>
+    <a-gltf-model
+  id="elephant"
+  src="#avatarModel1"
+  position="0 0 0.5"
+  scale="1.5 1.5 1.5"
+  rotation="-270 0 0">
+</a-gltf-model>
+  </a-entity>
+
+    </a-scene>
+
+  </body>
+</html> 
