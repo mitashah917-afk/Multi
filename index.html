@@ -4,6 +4,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/aframe-look-at-component@1.0.0/index.min.js
+    "></script>
   </head>
   <body>
     <a-scene mindar-image= "imageTargetSrc: targets5.mind; maxTrack: 3" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false" filterMinCF:0.2; filterBeta: 10;/>
@@ -53,6 +56,7 @@
   <a-entity mindar-image-target="targetIndex: 2">
     <a-plane src="#card2" position="0 0 0" height="1" width="1"></a-plane>
     <a-gltf-model
+  look-at=[camera]
   id="elephant"
   src="#avatarModel1"
   position="0 0 0.5"
